@@ -1,0 +1,112 @@
+---
+const currentPage = Astro.url.pathname;  // Optional: For active link highlighting
+---
+
+<header style="background-color: #ffffff; color: #000000; padding: 15px 20px; display: flex; justify-content: space-between; align-items: center; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+  <!-- Left: Logo Image + GOVAL Text Side-by-Side -->
+  <div style="display: flex; align-items: center; gap: 10px; flex-direction: row;">
+    <!-- Logo Image (left of GOVAL) -->
+    <img 
+      src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ9qRPAphh9ra5Bg7fvV-Dk0Yorqb6-gp2BSomtmkh0Fg-k8W2RBew8e-uHbgBABrOL&usqp=CAU"  
+      alt="GoVal Logo" 
+      style="
+        height: 80px;  /* Smaller size to fit beside text; adjust e.g., 60px or 100px */
+        width: auto;  /* Maintains aspect ratio */
+        max-width: 150px;  /* Prevents overflow */
+      "
+      onerror="this.style.display='none';"  
+    />
+    
+    <!-- GOVAL Text (right beside logo) -->
+    <h1 style="margin: 0; font-size: 2.5em; font-weight: bold; color: #000000; letter-spacing: 1px; line-height: 1;">
+      GOVAL
+    </h1>
+  </div>
+
+  <!-- Optional Subtitle Below the Pair (centered under logo + text) -->
+  <div style="text-align: left; margin-top: -5px;">
+  </div>
+
+  <!-- Right: Navigation Menu (unchanged) -->
+  <nav style="display: flex; gap: 20px; align-items: center;">
+    <ul style="list-style: none; margin: 0; padding: 0; display: flex; gap: 20px;">
+      <li><a href="/" style="text-decoration: none; color: #000000; font-weight: bold; font-size: 16px;">Home</a></li>
+      <li><a href="/GoVaLAI" style="text-decoration: none; color: #000000; font-weight: bold; font-size: 16px;">GoVaLAI</a></li>
+      <li><a href="/services" style="text-decoration: none; color: #000000; font-weight: bold; font-size: 16px;">Solutions</a></li>
+      <li><a href="/Blog" style="text-decoration: none; color: #000000; font-weight: bold; font-size: 16px;">Blog</a></li>
+      <li><a href="/Coustmer Services" style="text-decoration: none; color: #000000; font-weight: bold; font-size: 16px;">Coustmer Services</a></li>
+      <li><a href="/contact" style="text-decoration: none; color: #000000; font-weight: bold; font-size: 16px;">Contact</a></li>
+    </ul>
+  </nav>
+</header>
+
+<style>
+  /* Hover effects for menu */
+  :global(header a:hover) {
+    color: #0056b3 !important;
+    text-decoration: underline;
+  }
+  
+  /* Mobile: Stack logo + text vertically, center everything */
+  @media (max-width: 768px) {
+    :global(header) {
+      flex-direction: column;
+      gap: 10px;
+      text-align: center;
+      padding: 10px 15px;  /* Slightly less padding on mobile */
+    }
+    :global(header div[style*="flex-direction: row"]) {
+      flex-direction: column;  /* Stack logo above GOVAL on mobile */
+      gap: 5px;
+      width: 100%;  /* Full width for centering */
+    }
+    :global(header ul) {
+      flex-direction: row;  /* Horizontal menu on tablets/small mobiles */
+      gap: 10px;
+      flex-wrap: wrap;  /* Wrap if needed, prevents overflow */
+      justify-content: center;
+      width: 100%;
+    }
+    :global(header li) {
+      margin: 0 5px;  /* Extra spacing for touch targets */
+    }
+    :global(header a) {
+      font-size: 14px;  /* Slightly smaller font for mobile */
+      padding: 5px 10px;  /* Touch-friendly padding */
+      min-width: 80px;  /* Ensures tappable size */
+      text-align: center;
+    }
+    :global(header img) {
+      height: 60px;  /* Smaller on mobile */
+      max-width: 120px;
+    }
+    :global(header h1) {
+      font-size: 2em;
+    }
+    :global(header div[style*="text-align: left"]) {
+      text-align: center;
+    }
+    
+    /* Extra for very small phones: Stack menu vertically */
+    @media (max-width: 480px) {
+      :global(header ul) {
+        flex-direction: column;  /* Vertical stack for tiny screens */
+        gap: 8px;
+        align-items: center;
+      }
+      :global(header a) {
+        font-size: 16px;  /* Back to normal for readability in column */
+        padding: 8px 15px;
+        width: 100%;
+        max-width: 200px;
+        display: block;  /* Full-width buttons */
+        border: 1px solid #ddd;  /* Subtle border for separation */
+        border-radius: 4px;
+        background-color: #f9f9f9;  /* Light bg for buttons */
+      }
+      :global(header a:hover) {
+        background-color: #e9e9e9;  /* Hover feedback on mobile (tap simulation) */
+      }
+    }
+  }
+</style>
