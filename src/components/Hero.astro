@@ -1,250 +1,90 @@
 ---
-// Hero.astro - New structure based on provided HTML/CSS with inline styles for replication
+// Header.astro
+// Defines the sticky navigation bar for mobile and desktop.
+const navLinks = [
+  { text: 'Home', href: '/' },
+  { text: 'GoVal AI', href: '/ai' },
+  { text: 'Solutions', href: '/solutions' },
+  { text: 'About GoVal', href: '/about' },
+  { text: 'Blogs', href: '/blog' },
+  { text: 'Customer Stories', href: '/stories' },
+  { text: 'Contact Us', href: '/contact' },
+];
 ---
 
-<!-- The original mobile CTA bar is removed as the new structure includes a desktop/mobile "Get Started" button -->
-<section style="background-color: #ffffff; padding: 60px 40px; display: flex; align-items: flex-start; justify-content: center; gap: 40px; width: 100%; max-width: none; margin: 0;">  <!-- Pure white BG -->
-  <!-- Left: Heading, Para (left-aligned), Button -->
-  <div style="flex: 1; max-width: 800px; text-align: left; color: #000000; order: 1;">
-    <!-- Heading -->
-    <!-- The empty <p></p> and <br> elements are preserved as per the provided code for layout. -->
-     <p></p>
-    <h1 style="font-size: 2.5em; color: #007bff; margin-bottom: 20px; line-height: 1.2;">
-      <br>
-      <span style="font-size: 1.7em; color: #000000;">GoVal Paperless<br>Validation Solution <br>Stay Compliant,<br>Stay Ahead.</span>
-    </h1>
-    
-    <!-- Paragraph -->
-    <p style="font-size: 18px; line-height: 1.6; color: #333; margin-bottom: 30px;">
-      GoVal was founded on the principle that validation should be efficient, compliant, and accessible. As a leading Digital GAMP5<br> Complaint Validation Platform, we replace manual processes with <br>automated CSV workflows. We recognized the challenges faced by <br>life science companies relying on outdated, paper-based systems. <br>Our Paperless Validation Solutions eliminate paper and <br>streamline GxP compliance.
-      <br><br>
-      With a team of validation and technology experts, we developed a robust <br>GxP Compliance Software suite designed for CFR Part 11 and Annex 11 <br>validation. Our Risk-Based CSV methodology and VLMS software ensure <br>audit-ready documentation and data integrity from requirements <br>through execution.
-    </p>
-    
-    <!-- Get Started Button -->
-    <button style="
-      background-color: #ff9500; 
-      color: white; 
-      padding: 15px 30px; 
-      font-size: 18px; 
-      font-weight: bold; 
-      border: none; 
-      border-radius: 5px; 
-      cursor: pointer; 
-      transition: background-color 0.3s;
-      margin-bottom: 40px;
-    " 
-    onclick="alert('Get Started clicked! Redirect to contact form soon.');">
-      Get Started
-    </button>
+<header class="sticky top-0 z-50 bg-white shadow-md">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex justify-between items-center h-20">
 
-    
-    <div style="margin-top: 40px;">
-      <!-- Small Centered: KEY BENEFITS AT A GLANCE -->
-      <p style="font-size: 14px; color: #000; text-align: center; margin-bottom: 20px; font-weight: bold;">
-        [ KEY BENEFITS AT A GLANCE ]
-      </p>
-      
-      <!-- h2: Key Features (Black) -->
-      <h2 style="font-size: 2.2em; color: #000; margin-bottom: 20px; line-height: 1.2; text-align: left; font-weight: bold;">
-        Key Features of Our GAMP 5 Validation Software.
-      </h2>
-      
-      <!-- Bold Black: Why Choose... -->
-      <h6 style="font-size: 1.1em; color: #000; margin-bottom: 20px; line-height: 1.2; text-align: center; font-weight: bold;">
-        Why Choose Our Digital Validation Platform Over Paper-Based Methods?
-      </h6>
-      
-      
-      <p style="font-size: 16px; color: #666; line-height: 1.5; margin-bottom: 40px; text-align: center; max-width: 800px; margin-left: auto; margin-right: auto;">
-        GoVal's digital validation system revolutionizes life science validation with a secure, paperless approach. Achieve rapid GxP compliance through automated workflows and real-time audit trails.
-      </p>
-      
-      
-      <div style="display: flex; justify-content: center; margin-bottom: 60px;">  
-        <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; width: 90%; max-width: 800px;"> 
-          
-          <div style="background-color: #ffffff; padding: 16px; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); border: 1px solid #e0e0e0; text-align: center; aspect-ratio: 1 / 1; display: flex; flex-direction: column; justify-content: center; align-items: center; overflow: hidden;">
-            <h3 style="font-size: 1.2em; color: #000000; line-height: 1.0; margin-bottom: 10px; font-weight: bold;">Accelerated GxP Compliance Software</h3>
-            <p style="font-size: 15px; color: #333; line-height: 1.1; margin: 0; text-align: center;">Automated workflows and real-time audit trails ensure fast and reliable compliance with regulatory standards.</p>
-          </div>
+      <!-- Logo (Using a placeholder SVG structure replicating the look) -->
+      <a href="/" class="flex items-center space-x-2">
+        <!-- Logo SVG Placeholder: Replicating the multi-colored shape -->
+        <svg viewBox="0 0 48 48" class="w-8 h-8">
+            <circle cx="12" cy="18" r="4" class="fill-indigo-500"></circle>
+            <circle cx="28" cy="12" r="4" class="fill-red-500"></circle>
+            <circle cx="20" cy="36" r="4" class="fill-teal-500"></circle>
+            <path d="M12 18 L28 12 L20 36 Z" class="fill-gray-200/50"></path>
+        </svg>
+        <span class="text-2xl font-bold text-gray-800 tracking-wide">GOVAL</span>
+      </a>
 
-          <!-- Box 2 -->
-          <div style="background-color: #ffffff; padding: 16px; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); border: 1px solid #e0e0e0; text-align: center; aspect-ratio: 1 / 1; display: flex; flex-direction: column; justify-content: center; align-items: center; overflow: hidden;">
-            <h3 style="font-size: 1.2em; color: #000000; margin-bottom: 10px; font-weight: bold;">100% Paperless Validation Solutions</h3>
-            <p style="font-size: 15px; color: #333; line-height: 1.1; margin: 0; text-align: center;">Eliminate manual processes and reduce errors with complete digital transformation of your validation workflows.</p>
-          </div>
+      <!-- Desktop Navigation & CTA (Hidden on Mobile) -->
+      <nav class="hidden lg:flex lg:items-center lg:space-x-6">
+        {navLinks.map((link) => (
+          <a href={link.href} class="text-sm font-medium text-gray-700 hover:text-indigo-600 transition duration-150">
+            {link.text}
+          </a>
+        ))}
+        <!-- Desktop Get Started Button -->
+        <a 
+          href="#" 
+          class="ml-4 px-4 py-2 text-sm font-bold text-white bg-red-600 rounded-lg shadow-lg hover:bg-red-700 transition duration-150"
+        >
+          Get Started
+        </a>
+      </nav>
 
-          <!-- Box 3 -->
-          <div style="background-color: #ffffff; padding: 15px; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); border: 1px solid #e0e0e0; text-align: center; aspect-ratio: 1 / 1; display: flex; flex-direction: column; justify-content: center; align-items: center; overflow: hidden;">
-            <h3 style="font-size: 1.2em; color: #000000; margin-bottom: 10px; font-weight: bold;">Enhanced Audit Readiness</h3>
-            <p style="font-size: 15px; color: #333; line-height: 1.1; margin: 0; text-align: center;">Our Risk-Based CSV workflows automate audit trails and reports. System-generated reports and real-time data access for seamless audits and regulatory inspections.</p>
-          </div>
-
-          <!-- Box 4 -->
-          <div style="background-color: #ffffff; padding: 15px; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); border: 1px solid #e0e0e0; text-align: center; aspect-ratio: 1 / 1; display: flex; flex-direction: column; justify-content: center; align-items: center; overflow: hidden;">
-            <h3 style="font-size: 1.2em; color: #000000; margin-bottom: 10px; font-weight: bold;">Secure Data Integrity in Validation Lifecycle Management</h3>
-            <p style="font-size: 15px; color: #333; line-height: 1.1; margin: 0; text-align: center;">Cloud-based platform with robust data management and security protocols ensuring data integrity.</p>
-          </div>
-
-          <!-- Box 5 -->
-          <div style="background-color: #ffffff; padding: 15px; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); border: 1px solid #e0e0e0; text-align: center; aspect-ratio: 1 / 1; display: flex; flex-direction: column; justify-content: center; align-items: center; overflow: hidden;">
-            <h3 style="font-size: 1.2em; color: #000000; margin-bottom: 10px; font-weight: bold;">CFR Part 11 & Annex 11 Compliance</h3>
-            <p style="font-size: 15px; color: #333; line-height: 1.1; margin: 0; text-align: center;">Built on GAMP 5 validation software principles for risk-based approach. Built-in tools for regulatory adherence and global compliance standards across all regions.</p>
-          </div>
-
-          <!-- Box 6 -->
-          <div style="background-color: #ffffff; padding: 15px; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); border: 1px solid #e0e0e0; text-align: center; aspect-ratio: 1 / 1; display: flex; flex-direction: column; justify-content: center; align-items: center; overflow: hidden;">
-            <h3 style="font-size: 1.2em; color:#000000; margin-bottom: 10px; font-weight: bold;">Productivity Improvement with our VLMS software</h3>
-            <p style="font-size: 15px; color: #333; line-height: 1.1; margin: 0; text-align: center;">Optimize workflows and enhance efficiency across your validation processes with intelligent automation.</p>
-          </div>
-        </div>
-      </div>
-
-      <!-- Space Below Boxes + GoVal AI Section (Centered) -->
-      <div style="margin-top: 60px; text-align: center;">
-        <!-- h1: GoVal AI (Center Black Bold) -->
-        <h1 style="font-size: 2.2em; color: #000; margin-bottom: 20px; line-height: 1.2; font-weight: bold;">
-          GoVal AI - Take the Advantage of AI power
-        </h1>
-        
-        <!-- p: Experience... (Centered Grey) -->
-        <p style="font-size: 16px; color: #666; line-height: 1.5; margin-bottom: 30px; max-width: 600px; margin-left: auto; margin-right: auto;">
-          Experience the next generation of validation with Artificial Intelligence (AI) driving efficiency, accuracy, and compliance.
-        </p>
-        
-        <!-- Explore Button (Orange, Centered) -->
-        <button style="
-          background-color: #ff9500; 
-          color: white; 
-          padding: 15px 30px; 
-          font-size: 18px; 
-          font-weight: bold; 
-          border: none; 
-          border-radius: 5px; 
-          cursor: pointer; 
-          transition: background-color 0.3s;
-          margin-bottom: 40px;
-        " 
-        onclick="alert('Explore GoVal AI clicked! Redirect to AI demo soon.');">
-          Explore GoVal AI
+      <!-- Mobile/Tablet Menu Button -->
+      <div class="flex lg:hidden items-center space-x-4">
+        <!-- Mobile Hamburger Icon -->
+        <button id="mobile-menu-button" type="button" class="text-gray-500 hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-indigo-500 rounded-md p-2 transition duration-150">
+          <!-- Icon for Menu (3 bars) -->
+          <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
         </button>
       </div>
 
-      <!-- Space Below + Ready to Transform Section (Centered) -->
-      <div style="margin-top: 40px; text-align: center;">
-        <!-- h1: Ready to Transform (Center Black Bold) -->
-        <h1 style="font-size: 2.2em; color: #000; margin-bottom: 20px; line-height: 1.2; font-weight: bold;">
-          Ready to Transform Your Validation Process?
-        </h1>
-        
-        <!-- p: Join leading... (Centered Grey) -->
-        <p style="font-size: 16px; color: #666; line-height: 1.5; margin-bottom: 30px; max-width: 600px; margin-left: auto; margin-right: auto;">
-          Join leading pharma and other life sciences companies that rely on GoVal for digital validation—paperless VLMS, EDC, and Part 11/Annex 11–ready workflows that keep you audit-ready.
-        </p>
-        
-        <!-- Book a Demo Button (Orange, Centered) -->
-        <button style="
-          background-color: #ff9500; 
-          color: white; 
-          padding: 15px 30px; 
-          font-size: 18px; 
-          font-weight: bold; 
-          border: none; 
-          border-radius: 5px; 
-          cursor: pointer; 
-          transition: background-color 0.3s;
-        " 
-        onclick="alert('Book a Demo clicked! Redirect to form soon.');">
-          Book a Demo
-        </button>
-      </div>
     </div>
   </div>
 
-  <!-- Right: Circular Image (Scrolled Down 4cm) -->
-  <div style="flex: 0 0 300px; display: flex; align-items: flex-start; order: 2; margin-top: 40px;">  <!-- Added margin-top for down scroll -->
-    <img 
-      src="https://www.govalidation.com/images/web-bg-dis.webp"  
-      alt="GoVal Circular Image" 
-      style="
-        width: 500px; 
-        height: 500px;
-        border-radius: 50%; 
-        object-fit: cover; 
-        box-shadow: 0 4px 8px rgba(0,0,0,0.1); 
-        border: 3px solid #000000; 
-      "
-      onerror="this.style.display='none'; this.nextElementSibling.style.display='block';"
-    />
-    <!-- Fallback -->
-    <div style="display: none; width: 500px; height: 500px; border-radius: 50%; background-color: #007bff; border: 3px solid #007bff; margin: 0 auto;"></div>
+  <!-- Mobile Menu Drawer (Hidden by Default) -->
+  <div id="mobile-menu" class="hidden lg:hidden">
+    <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+      {navLinks.map((link) => (
+        <a href={link.href} class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:bg-gray-50 hover:text-indigo-600">
+          {link.text}
+        </a>
+      ))}
+      <a 
+        href="#" 
+        class="block text-center mt-3 mx-2 px-3 py-3 text-base font-bold text-white bg-red-600 rounded-lg shadow-xl hover:bg-red-700 transition duration-150"
+      >
+        Get Started
+      </a>
+    </div>
   </div>
-</section>
+</header>
 
-<style>
-  /* Button hover effect (Blue Get Started) */
-  :global(section button[style*="background-color: #007bff"]:hover) {
-    background-color: #0056b3 !important;
-  }
-  
-  /* Added: Orange Buttons Hover */
-  :global(section button[style*="background-color: #ff9500"]:hover) {
-    background-color: #e68900 !important;  /* Darker orange */
-  }
+<script>
+  // Simple JavaScript to toggle the mobile menu visibility
+  document.addEventListener('DOMContentLoaded', () => {
+    const button = document.getElementById('mobile-menu-button');
+    const menu = document.getElementById('mobile-menu');
 
-  /* Responsive: Stack on mobile (full-width bg preserved, mobile width priority) */
-  @media (max-width: 1024px) {
-    :global(section) {
-      flex-direction: column;
-      align-items: center;
-      gap: 20px;
-      padding: 40px 20px;  /* Reduced padding for mobile space */
-      width: 100%;  /* Full width */
+    if (button && menu) {
+      button.addEventListener('click', () => {
+        menu.classList.toggle('hidden');
+      });
     }
-    :global(section div[style*="order: 1"]) {
-      order: 1;
-      text-align: center;
-      max-width: 100%;
-      width: 100%;  /* Full mobile width */
-    }
-    :global(section div[style*="order: 2"]) {
-      order: 2;
-      align-self: center;
-      margin-top: 20px;  /* Reduced image down-scroll on mobile for balance */
-      flex: none;  /* Prevent flex grow */
-    }
-    :global(section h1, :global(section h2), :global(section h6), :global(section h3)) {
-      font-size: 1.8em;  /* Smaller on mobile */
-      text-align: center;  /* All headings center on mobile */
-      line-height: 1.3;  /* Better wrapping */
-      margin: 0 auto 15px;  /* Auto margins for centering */
-    }
-    :global(section p[style*="text-align: center"]) {
-      text-align: center;
-      max-width: 100%;  /* Full mobile width */
-      padding: 0 10px;  /* Side padding to prevent edge squeeze */
-      margin: 0 auto 20px;
-    }
-    :global(section p[style*="font-size: 18px"]) {
-      font-size: 16px;  /* Para scales down slightly */
-      text-align: center;  /* Center long para */
-      line-height: 1.5;
-    }
-    :global(section img) {
-      width: 250px;
-      height: 250px;
-      max-width: 100%;  /* Prevents overflow */
-    }
-    /* Boxes: 1 col mobile, centered */
-    :global(section div[style*="grid-template-columns"]) {
-      grid-template-columns: 1fr;
-      width: 100%;  /* Full mobile */
-      gap: 15px;
-      justify-items: center;  /* Center boxes */
-    }
-    :global(section div[style*="aspect-ratio"]) {
-      width: 100%;
-    }
-  }
-</style>
+  });
