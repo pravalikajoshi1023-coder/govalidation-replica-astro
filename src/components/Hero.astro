@@ -1,21 +1,27 @@
+---
+// Hero.astro - New structure based on provided HTML/CSS with inline styles for replication
+---
+
+<!-- The original mobile CTA bar is removed as the new structure includes a desktop/mobile "Get Started" button -->
 <section style="background-color: #ffffff; padding: 60px 40px; display: flex; align-items: flex-start; justify-content: center; gap: 40px; width: 100%; max-width: none; margin: 0;">  <!-- Pure white BG -->
-  <!-- Left: Heading, Para (left-aligned), Button (Unchanged) -->
+  <!-- Left: Heading, Para (left-aligned), Button -->
   <div style="flex: 1; max-width: 800px; text-align: left; color: #000000; order: 1;">
-    <!-- Heading (Unchanged) -->
+    <!-- Heading -->
+    <!-- The empty <p></p> and <br> elements are preserved as per the provided code for layout. -->
      <p></p>
     <h1 style="font-size: 2.5em; color: #007bff; margin-bottom: 20px; line-height: 1.2;">
       <br>
       <span style="font-size: 1.7em; color: #000000;">GoVal Paperless<br>Validation Solution <br>Stay Compliant,<br>Stay Ahead.</span>
     </h1>
     
-    <!-- Paragraph (Unchanged) -->
+    <!-- Paragraph -->
     <p style="font-size: 18px; line-height: 1.6; color: #333; margin-bottom: 30px;">
-      GoVal was founded on the principle that validation should be <br>efficient, compliant, and accessible. As a leading Digital GAMP5<br> Complaint Validation Platform, we replace manual processes with <br>automated CSV workflows. We recognized the challenges faced by <br>life science companies relying on outdated, paper-based systems. <br>Our Paperless Validation Solutions eliminate paper and <br>streamline GxP compliance.
+      GoVal was founded on the principle that validation should be efficient, compliant, and accessible. As a leading Digital GAMP5<br> Complaint Validation Platform, we replace manual processes with <br>automated CSV workflows. We recognized the challenges faced by <br>life science companies relying on outdated, paper-based systems. <br>Our Paperless Validation Solutions eliminate paper and <br>streamline GxP compliance.
       <br><br>
       With a team of validation and technology experts, we developed a robust <br>GxP Compliance Software suite designed for CFR Part 11 and Annex 11 <br>validation. Our Risk-Based CSV methodology and VLMS software ensure <br>audit-ready documentation and data integrity from requirements <br>through execution.
     </p>
     
-    <!-- Get Started Button (Unchanged) -->
+    <!-- Get Started Button -->
     <button style="
       background-color: #ff9500; 
       color: white; 
@@ -49,12 +55,12 @@
         Why Choose Our Digital Validation Platform Over Paper-Based Methods?
       </h6>
       
-     
+      
       <p style="font-size: 16px; color: #666; line-height: 1.5; margin-bottom: 40px; text-align: center; max-width: 800px; margin-left: auto; margin-right: auto;">
         GoVal's digital validation system revolutionizes life science validation with a secure, paperless approach. Achieve rapid GxP compliance through automated workflows and real-time audit trails.
       </p>
       
-     
+      
       <div style="display: flex; justify-content: center; margin-bottom: 60px;">  
         <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; width: 90%; max-width: 800px;"> 
           
@@ -171,7 +177,7 @@
       "
       onerror="this.style.display='none'; this.nextElementSibling.style.display='block';"
     />
-    <!-- Fallback (Unchanged, Updated Size to Match) -->
+    <!-- Fallback -->
     <div style="display: none; width: 500px; height: 500px; border-radius: 50%; background-color: #007bff; border: 3px solid #007bff; margin: 0 auto;"></div>
   </div>
 </section>
@@ -241,5 +247,4 @@
       width: 100%;
     }
   }
-
-     
+</style>
