@@ -1,66 +1,34 @@
----
-// Hero.astro - New structure based on provided HTML/CSS with inline styles for replication
----
-
-<script>
-  // Function to safely handle button clicks
-  function handleButtonClick(message: string) {
-    console.log(`Button Clicked: ${message}`);
-  }
-
-  // Use DOMContentLoaded to ensure the elements exist before attaching listeners
-  document.addEventListener('DOMContentLoaded', () => {
-    // Select all buttons using the custom class selector
-    const buttons = document.querySelectorAll('.js-cta-button');
-
-    buttons.forEach(button => {
-      // FIX: Cast 'button' to HTMLElement so TypeScript recognizes the 'dataset' property
-      const htmlButton = button as HTMLElement;
-      const message = htmlButton.dataset.cta; // Now TypeScript knows 'dataset' exists
-      
-      if (message) {
-        button.addEventListener('click', () => handleButtonClick(message));
-      }
-    });
-  });
-</script>
-
-<!-- The original mobile CTA bar is removed as the new structure includes a desktop/mobile "Get Started" button -->
 <section style="background-color: #ffffff; padding: 60px 40px; display: flex; align-items: flex-start; justify-content: center; gap: 40px; width: 100%; max-width: none; margin: 0;">  <!-- Pure white BG -->
-  <!-- Left: Heading, Para (left-aligned), Button -->
+  <!-- Left: Heading, Para (left-aligned), Button (Unchanged) -->
   <div style="flex: 1; max-width: 800px; text-align: left; color: #000000; order: 1;">
-    <!-- Heading -->
-    <!-- The empty <p></p> and <br> elements are preserved as per the provided code for layout. -->
+    <!-- Heading (Unchanged) -->
      <p></p>
     <h1 style="font-size: 2.5em; color: #007bff; margin-bottom: 20px; line-height: 1.2;">
       <br>
       <span style="font-size: 1.7em; color: #000000;">GoVal Paperless<br>Validation Solution <br>Stay Compliant,<br>Stay Ahead.</span>
     </h1>
     
-    <!-- Paragraph -->
+    <!-- Paragraph (Unchanged) -->
     <p style="font-size: 18px; line-height: 1.6; color: #333; margin-bottom: 30px;">
-      GoVal was founded on the principle that validation should be efficient, compliant, and accessible. As a leading Digital GAMP5<br> Complaint Validation Platform, we replace manual processes with <br>automated CSV workflows. We recognized the challenges faced by <br>life science companies relying on outdated, paper-based systems. <br>Our Paperless Validation Solutions eliminate paper and <br>streamline GxP compliance.
+      GoVal was founded on the principle that validation should be <br>efficient, compliant, and accessible. As a leading Digital GAMP5<br> Complaint Validation Platform, we replace manual processes with <br>automated CSV workflows. We recognized the challenges faced by <br>life science companies relying on outdated, paper-based systems. <br>Our Paperless Validation Solutions eliminate paper and <br>streamline GxP compliance.
       <br><br>
       With a team of validation and technology experts, we developed a robust <br>GxP Compliance Software suite designed for CFR Part 11 and Annex 11 <br>validation. Our Risk-Based CSV methodology and VLMS software ensure <br>audit-ready documentation and data integrity from requirements <br>through execution.
     </p>
     
-    <!-- Get Started Button -->
-    <button 
-      class="js-cta-button"
-      data-cta="Get Started"
-      style="
-        background-color: #ff9500; 
-        color: white; 
-        padding: 15px 30px; 
-        font-size: 18px; 
-        font-weight: bold; 
-        border: none; 
-        border-radius: 5px; 
-        cursor: pointer; 
-        transition: background-color 0.3s;
-        margin-bottom: 40px;
-      " 
-    >
+    <!-- Get Started Button (Unchanged) -->
+    <button style="
+      background-color: #ff9500; 
+      color: white; 
+      padding: 15px 30px; 
+      font-size: 18px; 
+      font-weight: bold; 
+      border: none; 
+      border-radius: 5px; 
+      cursor: pointer; 
+      transition: background-color 0.3s;
+      margin-bottom: 40px;
+    " 
+    onclick="alert('Get Started clicked! Redirect to contact form soon.');">
       Get Started
     </button>
 
@@ -81,48 +49,48 @@
         Why Choose Our Digital Validation Platform Over Paper-Based Methods?
       </h6>
       
-      
+     
       <p style="font-size: 16px; color: #666; line-height: 1.5; margin-bottom: 40px; text-align: center; max-width: 800px; margin-left: auto; margin-right: auto;">
         GoVal's digital validation system revolutionizes life science validation with a secure, paperless approach. Achieve rapid GxP compliance through automated workflows and real-time audit trails.
       </p>
       
-      
+     
       <div style="display: flex; justify-content: center; margin-bottom: 60px;">  
         <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; width: 90%; max-width: 800px;"> 
           
           <div style="background-color: #ffffff; padding: 16px; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); border: 1px solid #e0e0e0; text-align: center; aspect-ratio: 1 / 1; display: flex; flex-direction: column; justify-content: center; align-items: center; overflow: hidden;">
-            <h3 style="font-size: 1.2em; color: #000000; line-height: 1.0; margin-bottom: 10px; font-weight: bold;">Accelerated GxP Compliance Software</h3>
-            <p style="font-size: 15px; color: #333; line-height: 1.1; margin: 0; text-align: center;">Automated workflows and real-time audit trails ensure fast and reliable compliance with regulatory standards.</p>
+            <h3 style="font-size: 1.3em; color: #000000; line-height: 1.0; margin-bottom: 10px; font-weight: bold;">Accelerated GxP Compliance Software</h3>
+            <p style="font-size: 10px; color: #333; line-height: 1.1; margin: 0; text-align: center;">Automated workflows and real-time audit trails ensure fast and reliable compliance with regulatory standards.</p>
           </div>
 
           <!-- Box 2 -->
           <div style="background-color: #ffffff; padding: 16px; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); border: 1px solid #e0e0e0; text-align: center; aspect-ratio: 1 / 1; display: flex; flex-direction: column; justify-content: center; align-items: center; overflow: hidden;">
-            <h3 style="font-size: 1.2em; color: #000000; margin-bottom: 10px; font-weight: bold;">100% Paperless Validation Solutions</h3>
-            <p style="font-size: 15px; color: #333; line-height: 1.1; margin: 0; text-align: center;">Eliminate manual processes and reduce errors with complete digital transformation of your validation workflows.</p>
+            <h3 style="font-size: 1.4em; color: #000000; margin-bottom: 10px; font-weight: bold;">100% Paperless Validation Solutions</h3>
+            <p style="font-size: 10px; color: #333; line-height: 1.1; margin: 0; text-align: center;">Eliminate manual processes and reduce errors with complete digital transformation of your validation workflows.</p>
           </div>
 
           <!-- Box 3 -->
           <div style="background-color: #ffffff; padding: 15px; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); border: 1px solid #e0e0e0; text-align: center; aspect-ratio: 1 / 1; display: flex; flex-direction: column; justify-content: center; align-items: center; overflow: hidden;">
-            <h3 style="font-size: 1.2em; color: #000000; margin-bottom: 10px; font-weight: bold;">Enhanced Audit Readiness</h3>
-            <p style="font-size: 15px; color: #333; line-height: 1.1; margin: 0; text-align: center;">Our Risk-Based CSV workflows automate audit trails and reports. System-generated reports and real-time data access for seamless audits and regulatory inspections.</p>
+            <h3 style="font-size: 1.4em; color: #000000; margin-bottom: 10px; font-weight: bold;">Enhanced Audit Readiness</h3>
+            <p style="font-size: 10px; color: #333; line-height: 1.1; margin: 0; text-align: center;">Our Risk-Based CSV workflows automate audit trails and reports. System-generated reports and real-time data access for seamless audits and regulatory inspections.</p>
           </div>
 
           <!-- Box 4 -->
           <div style="background-color: #ffffff; padding: 15px; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); border: 1px solid #e0e0e0; text-align: center; aspect-ratio: 1 / 1; display: flex; flex-direction: column; justify-content: center; align-items: center; overflow: hidden;">
-            <h3 style="font-size: 1.2em; color: #000000; margin-bottom: 10px; font-weight: bold;">Secure Data Integrity in Validation Lifecycle Management</h3>
-            <p style="font-size: 15px; color: #333; line-height: 1.1; margin: 0; text-align: center;">Cloud-based platform with robust data management and security protocols ensuring data integrity.</p>
+            <h3 style="font-size: 1.4em; color: #000000; margin-bottom: 10px; font-weight: bold;">Secure Data Integrity in Validation Lifecycle Management</h3>
+            <p style="font-size: 10px; color: #333; line-height: 1.1; margin: 0; text-align: center;">Cloud-based platform with robust data management and security protocols ensuring data integrity.</p>
           </div>
 
           <!-- Box 5 -->
           <div style="background-color: #ffffff; padding: 15px; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); border: 1px solid #e0e0e0; text-align: center; aspect-ratio: 1 / 1; display: flex; flex-direction: column; justify-content: center; align-items: center; overflow: hidden;">
-            <h3 style="font-size: 1.2em; color: #000000; margin-bottom: 10px; font-weight: bold;">CFR Part 11 & Annex 11 Compliance</h3>
-            <p style="font-size: 15px; color: #333; line-height: 1.1; margin: 0; text-align: center;">Built on GAMP 5 validation software principles for risk-based approach. Built-in tools for regulatory adherence and global compliance standards across all regions.</p>
+            <h3 style="font-size: 1.4em; color: #000000; margin-bottom: 10px; font-weight: bold;">CFR Part 11 & Annex 11 Compliance</h3>
+            <p style="font-size: 10px; color: #333; line-height: 1.1; margin: 0; text-align: center;">Built on GAMP 5 validation software principles for risk-based approach. Built-in tools for regulatory adherence and global compliance standards across all regions.</p>
           </div>
 
           <!-- Box 6 -->
           <div style="background-color: #ffffff; padding: 15px; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); border: 1px solid #e0e0e0; text-align: center; aspect-ratio: 1 / 1; display: flex; flex-direction: column; justify-content: center; align-items: center; overflow: hidden;">
-            <h3 style="font-size: 1.2em; color:#000000; margin-bottom: 10px; font-weight: bold;">Productivity Improvement with our VLMS software</h3>
-            <p style="font-size: 15px; color: #333; line-height: 1.1; margin: 0; text-align: center;">Optimize workflows and enhance efficiency across your validation processes with intelligent automation.</p>
+            <h3 style="font-size: 1.4em; color:#000000; margin-bottom: 10px; font-weight: bold;">Productivity Improvement with our VLMS software</h3>
+            <p style="font-size: 10px; color: #333; line-height: 1.1; margin: 0; text-align: center;">Optimize workflows and enhance efficiency across your validation processes with intelligent automation.</p>
           </div>
         </div>
       </div>
@@ -140,22 +108,19 @@
         </p>
         
         <!-- Explore Button (Orange, Centered) -->
-        <button 
-          class="js-cta-button"
-          data-cta="Explore GoVal AI"
-          style="
-            background-color: #ff9500; 
-            color: white; 
-            padding: 15px 30px; 
-            font-size: 18px; 
-            font-weight: bold; 
-            border: none; 
-            border-radius: 5px; 
-            cursor: pointer; 
-            transition: background-color 0.3s;
-            margin-bottom: 40px;
-          " 
-        >
+        <button style="
+          background-color: #ff9500; 
+          color: white; 
+          padding: 15px 30px; 
+          font-size: 18px; 
+          font-weight: bold; 
+          border: none; 
+          border-radius: 5px; 
+          cursor: pointer; 
+          transition: background-color 0.3s;
+          margin-bottom: 40px;
+        " 
+        onclick="alert('Explore GoVal AI clicked! Redirect to AI demo soon.');">
           Explore GoVal AI
         </button>
       </div>
@@ -173,21 +138,18 @@
         </p>
         
         <!-- Book a Demo Button (Orange, Centered) -->
-        <button 
-          class="js-cta-button"
-          data-cta="Book a Demo"
-          style="
-            background-color: #ff9500; 
-            color: white; 
-            padding: 15px 30px; 
-            font-size: 18px; 
-            font-weight: bold; 
-            border: none; 
-            border-radius: 5px; 
-            cursor: pointer; 
-            transition: background-color 0.3s;
-          " 
-        >
+        <button style="
+          background-color: #ff9500; 
+          color: white; 
+          padding: 15px 30px; 
+          font-size: 18px; 
+          font-weight: bold; 
+          border: none; 
+          border-radius: 5px; 
+          cursor: pointer; 
+          transition: background-color 0.3s;
+        " 
+        onclick="alert('Book a Demo clicked! Redirect to form soon.');">
           Book a Demo
         </button>
       </div>
@@ -209,7 +171,7 @@
       "
       onerror="this.style.display='none'; this.nextElementSibling.style.display='block';"
     />
-    <!-- Fallback -->
+    <!-- Fallback (Unchanged, Updated Size to Match) -->
     <div style="display: none; width: 500px; height: 500px; border-radius: 50%; background-color: #007bff; border: 3px solid #007bff; margin: 0 auto;"></div>
   </div>
 </section>
@@ -279,4 +241,4 @@
       width: 100%;
     }
   }
-</style>
+     
