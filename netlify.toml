@@ -1,0 +1,16 @@
+[build]
+
+Astro's default build directory for static output
+publish = "dist"
+
+Astro's default build command
+command = "npm run build"
+
+This is the crucial part for resolving 404s on single-page-app-like sites.
+It ensures that if a route is not found (a 404), Netlify serves the main
+index.html file instead of a standard error page. This is often necessary
+for static sites.
+[[redirects]]
+from = "/*"
+to = "/index.html"
+status = 200
