@@ -1,12 +1,9 @@
 import { defineConfig } from 'astro/config';
-import netlify from '@astrojs/netlify/functions';  // Serverless adapter for Netlify
+import tailwind from '@astrojs/tailwind';  // Tailwind integration
 
+// Static export (no SSR, no Netlify adapter needed)
 export default defineConfig({
-  output: 'server',  // Serverless: Enables functions/API (change to 'static' for pure static)
-  adapter: netlify({
-    // Optional: Edge functions (global speed—uncomment if needed)
-    // target: 'edge',  // Default: 'node' (stable)
-  }),
-  // Optional: Base URL (add after deploy)
-  // site: 'https://your-site.netlify.app',
+  output: 'static',              // Astro will output static HTML/JS/CSS
+  integrations: [tailwind()],    // Enables Tailwind
+  // site: 'https://your-site.netlify.app',  // optional, set later if needed
 });
